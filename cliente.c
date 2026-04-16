@@ -18,7 +18,7 @@ int main() {
     serv_addr.sin_port = htons(PORT);
 
     // COLOQUE O IP DO SERVIDOR AQUI
-    inet_pton(AF_INET, "192.168.0.100", &serv_addr.sin_addr);
+    inet_pton(AF_INET, "172.16.20.23", &serv_addr.sin_addr);
 
     connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr));
 
