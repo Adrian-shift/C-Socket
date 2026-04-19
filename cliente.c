@@ -6,7 +6,7 @@
 
 #define PORT 8080
 
-int main() {
+int cliente() {
     int sock = 0;
     struct sockaddr_in serv_addr;
     char voto[10];

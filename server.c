@@ -9,7 +9,7 @@
 int votosA = 0;
 int votosB = 0;
 
-int main() {
+int server() {
     int server_fd, client_socket;
     struct sockaddr_in address;
     int addrlen = sizeof(address);

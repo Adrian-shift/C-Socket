@@ -1,0 +1,34 @@
+# Project: SystemVoting
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o cliente.o server.o
+LINKOBJ  = main.o cliente.o server.o
+LIBS     = -L"D:/ProgramasFiles/Dev-Cpp/TDM-GCC-64/lib" -L"D:/ProgramasFiles/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/ProgramasFiles/Dev-Cpp/TDM-GCC-64/include" -I"D:/ProgramasFiles/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"D:/ProgramasFiles/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"D:/ProgramasFiles/Dev-Cpp/TDM-GCC-64/include" -I"D:/ProgramasFiles/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"D:/ProgramasFiles/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"D:/ProgramasFiles/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = SystemVoting.exe
+CXXFLAGS = $(CXXINCS) -ansi -std=c11
+CFLAGS   = $(INCS) -ansi -std=c11
+DEL      = D:\ProgramasFiles\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+cliente.o: cliente.c
+	$(CC) -c cliente.c -o cliente.o $(CFLAGS)
+
+server.o: server.c
+	$(CC) -c server.c -o server.o $(CFLAGS)
